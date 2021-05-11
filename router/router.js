@@ -6,10 +6,7 @@ require('../models/userSchema')
 const bcrypt = require('bcryptjs')   // for secure user password
 const authenticate = require('../middleware/authenticate')
 
-router.get('/', (req, res) => {
-    res.send('Hello Friends')
-})
-
+ 
 //  using async and await
 router.post('/register', async (req, res) => {
 
