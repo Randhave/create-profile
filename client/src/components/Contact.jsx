@@ -12,10 +12,7 @@ const Contact = () => {
         const value = e.target.value
         setuserMessage({ ...userMessage, [name]: value })
     }
-    if (!userMessage.name || !userMessage.email || !userMessage.phone || !userMessage.message) {
-        alert("Please login before send message")
-        history.push('/login')
-    }
+    
     const PostMessage = async (e) => {
         e.preventDefault()
         const { name, email, phone, message } = userMessage
@@ -29,8 +26,11 @@ const Contact = () => {
             })
         })
         const data = await response.json()
-
-        if (!data || response.status === 401) {
+        if (!userMessage.name || !userMessage.email || !userMessage.phone || !userMessage.message) {
+            alert("Please login before send message")
+            history.push('/login')
+        }
+       else if (!data || response.status === 401) {
             console.log("message not send ! Login our Properly filled")
         }
         else {

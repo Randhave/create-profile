@@ -23,7 +23,7 @@ const Login = () => {
                     email, password
                 })
             })
-
+ 
             const data = await response.json()
 
             if (response.status !== 201 || response.status === 422 ) {
