@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import loginPic from '../images/login_icon.jpg'
 import { UserContext } from '../App'
-import {NavLink} from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 const Login = () => {
 
     const { state, dispatch } = useContext(UserContext)
@@ -23,10 +23,10 @@ const Login = () => {
                     email, password
                 })
             })
- 
+
             const data = await response.json()
 
-            if (response.status !== 201 || response.status === 422 ) {
+            if (response.status !== 201 || response.status === 422) {
                 alert("Invalid Registration")
             }
             else {
@@ -63,9 +63,11 @@ const Login = () => {
                                     <label for="password" className="form-label">password</label>
                                     <input type="password" autoComplete='off' className="form-control" onChange={(e) => setPassword(e.target.value)} name='password' id="password" placeholder='Enter password' />
                                 </div>
+                                <div className="loginAccount">
+                                    <button type="submit" onClick={loginUser} className="text-align-center btn btn-success">Login</button>
+                                    <NavLink to='/register' className='btn'>Create an Account</NavLink>
+                                </div>
 
-                                <button type="submit" onClick={loginUser} className="text-align-center btn btn-success">Login</button>
-                                <NavLink to='/register' className='btn'>Create an Account</NavLink>
                             </form>
                         </div>
 

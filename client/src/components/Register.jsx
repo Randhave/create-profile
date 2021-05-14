@@ -83,7 +83,7 @@ const Register = () => {
                                 <button type="submit" id="register" onClick={postData} className="text-center btn btn-success">Register</button>
                             </form>
                         </div>
-                        <div className="col-md-6 mx-auto  ">
+                        <div className="col-md-6 mx-auto image_div ">
                             <div className="imageclass ">
                                 <figure my-0 mx-0>
                                     <img src={loginPic} alt="phone image" />
